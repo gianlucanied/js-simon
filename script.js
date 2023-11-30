@@ -16,6 +16,9 @@ randomNumber.innerHTML = numeriGenerati;
 // Impostiamo il timer di 30 secondi per i numeri generati
 setTimeout(nascondiNumero, 1000);
 
+// Creo un Array contenente i numeri di User
+userArr = [];
+
 // Funzioni
 
 // Funzione per creare numeri casuali
@@ -33,7 +36,7 @@ function generaNumeriCasuali(min, max, length) {
 // Funzione per nascondere numeri
 function nascondiNumero() {
 
-    let time = 30;
+    let time = 5;
     clock = setInterval(
         function(){
             time--;
@@ -41,6 +44,19 @@ function nascondiNumero() {
             if (time === 0) {
                 clearInterval(clock);
                 randomNumber.classList.add("nascondi");
+
+                while (userArr < 5) {
+                    // Chiedi all'utente di inserire un numero
+                    let numeri = parseInt(prompt("Inserisci un numero:"));
+                
+                    // Verifica se il numero è dispari
+                    if (numeriGenerati.includes(numeri)) {
+                        // Inserisci il numero nell'array
+                        alert("Hai indovinato un numero!");
+                    } else {
+                        alert("Il numero non è contenuto:(")
+                    }
+                }
             } 
         },
         1000
