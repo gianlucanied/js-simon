@@ -7,6 +7,12 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 var numeriGenerati = generaNumeriCasuali(1, 10, 5);
 console.log(numeriGenerati);
 
+// Creiamo la var per i numeri random generati
+const randomNumber = document.getElementById("random-number");
+
+// Stampiamoli in pagina
+randomNumber.innerHTML = numeriGenerati;
+
 
 
 // Funzioni
